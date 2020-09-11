@@ -1,0 +1,12 @@
+projects:
+  twitterclone:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: API.ts
+        docsFilePath: src/graphql
