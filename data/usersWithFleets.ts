@@ -10,6 +10,7 @@ export default [
         {
           "id": "0",
           "type": "IMAGE",
+          "createdAt": "2020-11-04T12:05:39.955Z",
           "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/vertical-images/1.jpg"
         },
         {

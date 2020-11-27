@@ -9,6 +9,7 @@ import { UserType, FleetType } from '../../types';
 import ProfilePicture from "../ProfilePicture";
 
 import styles from './styles';
+import moment from "moment";
 
 export type FleetViewProps = {
   user: UserType;
@@ -32,7 +33,7 @@ const FleetView = (props: FleetViewProps) => {
               @{user.username}
             </Text>
             <Text style={styles.time}>
-              2 days ago
+              {moment(fleet.createdAt).fromNow()}
             </Text>
           </View>
         </View>
