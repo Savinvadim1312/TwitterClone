@@ -15,7 +15,7 @@ export default [
         {
           "id": "1",
           "type": "TEXT",
-          "text": "Hi, there!"
+          "text": " Hi, there!Hi, there!Hi, there!Hi, there!Hi, there!Hi, there!Hi, there!Hi, there!Hi, there!"
         }
       ]
     }
