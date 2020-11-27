@@ -9,7 +9,7 @@ import FleetView from '../../components/FleetView';
 const FleetScreen = () => {
 
   const user = usersWithFleets[0];
-  const fleet = usersWithFleets[0].fleets.items[1];
+  const fleet = usersWithFleets[0].fleets.items[0];
 
   return (
     <FleetView user={user} fleet={fleet} />

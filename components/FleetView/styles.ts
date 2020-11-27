@@ -18,6 +18,33 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
+  },
+  userHeaderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    width: '100%',
+    alignItems: 'center',
+    position: 'absolute',
+    padding: 10,
+    top: 50,
+  },
+  userNames: {
+    marginLeft: 10,
+  },
+  name: {
+    color: "#efefef",
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginVertical: 5,
+  },
+  username: {
+    color: "#efefef",
+    fontSize: 18,
+  },
+  time: {
+    color: "#efefef",
+    fontSize: 18,
+    marginLeft: 10,
   }
 });
 
