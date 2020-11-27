@@ -45,6 +45,13 @@ const styles = StyleSheet.create({
     color: "#efefef",
     fontSize: 18,
     marginLeft: 10,
+  },
+  buttonContainer: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    flexDirection: 'row'
   }
 });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Text,
   View,
-  Image,
+  Image, TouchableWithoutFeedback, TouchableOpacity,
 } from 'react-native';
 
 import { UserType, FleetType } from '../../types';
@@ -14,10 +14,12 @@ import moment from "moment";
 export type FleetViewProps = {
   user: UserType;
   fleet: FleetType;
+  goToNextFleet: Function;
+  goToPrevFleet: Function;
 }
 
 const FleetView = (props: FleetViewProps) => {
-  const { user, fleet } = props;
+  const { user, fleet, goToNextFleet, goToPrevFleet } = props;
   return (
     <View style={styles.container}>
 
@@ -38,6 +40,12 @@ const FleetView = (props: FleetViewProps) => {
           </View>
         </View>
       </View>
+
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={{flex: 1}} onPress={() => goToPrevFleet()} />
+        <TouchableOpacity style={{flex: 1}} onPress={() => goToNextFleet()} />
+      </View>
+
     </View>
   )
 }
