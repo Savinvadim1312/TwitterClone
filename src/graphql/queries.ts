@@ -21,6 +21,18 @@ export const getUser = /* GraphQL */ `
         }
         nextToken
       }
+      fleets {
+        items {
+          id
+          type
+          text
+          image
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -40,6 +52,9 @@ export const listUsers = /* GraphQL */ `
         email
         image
         tweets {
+          nextToken
+        }
+        fleets {
           nextToken
         }
         createdAt
@@ -63,6 +78,9 @@ export const getTweet = /* GraphQL */ `
         email
         image
         tweets {
+          nextToken
+        }
+        fleets {
           nextToken
         }
         createdAt
@@ -105,6 +123,7 @@ export const listTweets = /* GraphQL */ `
           updatedAt
         }
         likes {
+          nextToken
           items {
             id
             userID
@@ -112,7 +131,64 @@ export const listTweets = /* GraphQL */ `
             createdAt
             updatedAt
           }
+
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getFleet = /* GraphQL */ `
+  query GetFleet($id: ID!) {
+    getFleet(id: $id) {
+      id
+      type
+      text
+      image
+      userID
+      user {
+        id
+        username
+        name
+        email
+        image
+        tweets {
           nextToken
+        }
+        fleets {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listFleets = /* GraphQL */ `
+  query ListFleets(
+    $filter: ModelFleetFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listFleets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        type
+        text
+        image
+        userID
+        user {
+          id
+          username
+          name
+          email
+          image
+          createdAt
+          updatedAt
         }
         createdAt
         updatedAt

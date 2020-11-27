@@ -24,6 +24,18 @@ export const createUser = /* GraphQL */ `
         }
         nextToken
       }
+      fleets {
+        items {
+          id
+          type
+          text
+          image
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -44,6 +56,18 @@ export const updateUser = /* GraphQL */ `
         items {
           id
           content
+          image
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      fleets {
+        items {
+          id
+          type
+          text
           image
           userID
           createdAt
@@ -78,6 +102,18 @@ export const deleteUser = /* GraphQL */ `
         }
         nextToken
       }
+      fleets {
+        items {
+          id
+          type
+          text
+          image
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -100,6 +136,9 @@ export const createTweet = /* GraphQL */ `
         email
         image
         tweets {
+          nextToken
+        }
+        fleets {
           nextToken
         }
         createdAt
@@ -139,6 +178,9 @@ export const updateTweet = /* GraphQL */ `
         tweets {
           nextToken
         }
+        fleets {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -176,6 +218,9 @@ export const deleteTweet = /* GraphQL */ `
         tweets {
           nextToken
         }
+        fleets {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -188,6 +233,99 @@ export const deleteTweet = /* GraphQL */ `
           updatedAt
         }
         nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createFleet = /* GraphQL */ `
+  mutation CreateFleet(
+    $input: CreateFleetInput!
+    $condition: ModelFleetConditionInput
+  ) {
+    createFleet(input: $input, condition: $condition) {
+      id
+      type
+      text
+      image
+      userID
+      user {
+        id
+        username
+        name
+        email
+        image
+        tweets {
+          nextToken
+        }
+        fleets {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateFleet = /* GraphQL */ `
+  mutation UpdateFleet(
+    $input: UpdateFleetInput!
+    $condition: ModelFleetConditionInput
+  ) {
+    updateFleet(input: $input, condition: $condition) {
+      id
+      type
+      text
+      image
+      userID
+      user {
+        id
+        username
+        name
+        email
+        image
+        tweets {
+          nextToken
+        }
+        fleets {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteFleet = /* GraphQL */ `
+  mutation DeleteFleet(
+    $input: DeleteFleetInput!
+    $condition: ModelFleetConditionInput
+  ) {
+    deleteFleet(input: $input, condition: $condition) {
+      id
+      type
+      text
+      image
+      userID
+      user {
+        id
+        username
+        name
+        email
+        image
+        tweets {
+          nextToken
+        }
+        fleets {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt
@@ -210,6 +348,9 @@ export const createLike = /* GraphQL */ `
         email
         image
         tweets {
+          nextToken
+        }
+        fleets {
           nextToken
         }
         createdAt
@@ -258,6 +399,9 @@ export const updateLike = /* GraphQL */ `
         tweets {
           nextToken
         }
+        fleets {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -302,6 +446,9 @@ export const deleteLike = /* GraphQL */ `
         email
         image
         tweets {
+          nextToken
+        }
+        fleets {
           nextToken
         }
         createdAt

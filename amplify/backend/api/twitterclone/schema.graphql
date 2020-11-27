@@ -5,6 +5,7 @@ type User @model {
   email: String!
   image: String
   tweets: [Tweet] @connection(keyName: "byUser", fields: ["id"])
+  fleets: [Fleet] @connection(keyName: "byUser", fields: ["id"])
 }
 
 type Tweet @model @key(name: "byUser", fields: ["userID"]) {
@@ -14,6 +15,15 @@ type Tweet @model @key(name: "byUser", fields: ["userID"]) {
   userID: ID!
   user: User @connection(fields: ["userID"])
   likes: [Like] @connection(keyName: "byTweet", fields: ["id"])
+}
+
+type Fleet @model @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  type: String!
+  text: String
+  image: String
+  userID: ID!
+  user: User @connection(fields: ["userID"])
 }
 
 type Like
